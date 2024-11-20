@@ -15,7 +15,7 @@ public:
         : precedence_(precedence), isRight_(isRight)
     { }
 
-    virtual Expression* parse(Parser* parser, const Expression* left, const Token& token) override
+    virtual Expression* parse(Parser* parser, Expression* left, const Token& token) override
     {
         Expression* right = parser->parseExpression(precedence_ - (isRight_ ? 1 : 0));
         return new OpExpression(left, token.type(), right);

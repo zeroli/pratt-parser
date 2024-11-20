@@ -1,6 +1,9 @@
 #pragma once
 
 #include "parser.h"
+#include "parselets/prefix_op_parselet.h"
+#include "parselets/postfix_op_parselet.h"
+#include "parselets/binary_op_parselet.h"
 
 #include <memory>
 

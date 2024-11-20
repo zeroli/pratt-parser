@@ -10,6 +10,7 @@
 
 namespace pp {
 class Lexer;
+class Expression;
 
 class PrefixParselet;
 class InfixParselet;
@@ -20,7 +21,7 @@ using InfixParseletPtr_t = std::shared_ptr<InfixParselet>;
 struct Parser {
 public:
     explicit Parser(std::unique_ptr<Lexer> lexer)
-        : lexer_(lexer)
+        : lexer_(std::move(lexer))
     { }
 
     virtual ~Parser() = default;

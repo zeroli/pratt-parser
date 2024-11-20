@@ -23,7 +23,7 @@ class NameExpression;
 struct AssignParselet : InfixParselet
 {
 public:
-    virtual Expression* parse(Parser* parser, const Expression* left, const Token& token)
+    virtual Expression* parse(Parser* parser, Expression* left, const Token& token)
     {
         Expression* right = parser->parseExpression(Precedence::ASSIGNMENT - 1);
         assert(dynamic_cast<const NameExpression*>(left) != nullptr);

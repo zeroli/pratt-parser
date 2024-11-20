@@ -18,7 +18,7 @@ class Expression;
 struct ConditionalParselet : InfixParselet
 {
 public:
-    virtual Expression* parse(Parser* parser, const Expression* left, const Token& token)
+    virtual Expression* parse(Parser* parser, Expression* left, const Token& token)
     {
         Expression* thenArm = parser->parseExpression();
         parser->consume(TokenType::COLON);

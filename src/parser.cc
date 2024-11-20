@@ -1,4 +1,7 @@
 #include "parser.h"
+#include "expressions/expression.h"
+#include "parselets/infix_parselet.h"
+#include "parselets/prefix_parselet.h"
 
 #include <cassert>
 
@@ -15,7 +18,7 @@ Expression* Parser::parseExpression(int precedence)
         token = consume();
 
         auto infix = infixParselets_[token.type()];
-        left = infix.parse(this, left, token);
+        left = infix->parse(this, left, token);
     }
     return left;
 }
@@ -60,7 +63,7 @@ int Parser::getPrecedence()
 {
     auto parser = infixParselets_[lookAhead(0).type()];
     if (parser) {
-        parser->getPrecedence();
+        return parser->getPrecedence();
     }
     return 0;
 }

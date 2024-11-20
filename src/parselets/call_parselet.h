@@ -16,7 +16,7 @@ class Expression;
 struct CallParselet : InfixParselet
 {
 public:
-    virtual Expression* parse(Parser* parser, const Expression* left, const Token& token) override
+    virtual Expression* parse(Parser* parser, Expression* left, const Token& token) override
     {
         std::vector<Expression*> args;
 

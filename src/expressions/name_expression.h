@@ -7,7 +7,14 @@
 namespace pp {
 struct NameExpression : Expression
 {
-public:
+    NameExpression(const std::string& name)
+        : name_(name)
+    { }
+
+    void print(std::ostream& os) const override {
+        os << name_;
+    }
+
     const std::string& name() const {
         return name_;
     }

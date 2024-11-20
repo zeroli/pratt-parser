@@ -12,9 +12,9 @@ public:
         : precedence_(precedence)
     { }
 
-    virtual ~PostfixParselet() = default;
+    virtual ~PostfixOpParselet() = default;
 
-    virtual Expression* parse(Parser* parser, const Expression* left, const Token& token) override
+    virtual Expression* parse(Parser* parser, Expression* left, const Token& token) override
     {
         return new PostfixExpression(left, token.type());
     }

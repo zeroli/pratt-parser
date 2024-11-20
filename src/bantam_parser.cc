@@ -1,5 +1,12 @@
 #include "bantam_parser.h"
 
+#include "precedence.h"
+#include "parselets/name_parselet.h"
+#include "parselets/assign_parselet.h"
+#include "parselets/conditional_parselet.h"
+#include "parselets/group_parselet.h"
+#include "parselets/call_parselet.h"
+
 namespace pp {
 BantamParser::BantamParser(std::unique_ptr<Lexer> lexer)
     : Parser(std::move(lexer))
@@ -21,6 +28,6 @@ BantamParser::BantamParser(std::unique_ptr<Lexer> lexer)
     infixLeft(TokenType::MINUS,     Precedence::SUM);
     infixLeft(TokenType::ASTERISK,  Precedence::PRODUCT);
     infixLeft(TokenType::SLASH,     Precedence::PRODUCT);
-    infixLeft(TokenType::CARET,     Precedence::EXPONENT);
+    infixRight(TokenType::CARET,     Precedence::EXPONENT);
 }
 }  // namespace pp

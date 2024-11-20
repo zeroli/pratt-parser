@@ -4,4 +4,5 @@ add_executable(pratt_parser
     lexer.cc
     parser.cc
     bantam_parser.cc
+    main.cc
 )

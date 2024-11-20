@@ -58,6 +58,7 @@
         "list": "cpp",
         "unordered_set": "cpp",
         "iostream": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "sstream": "cpp"
     }
 }
