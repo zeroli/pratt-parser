@@ -4,6 +4,9 @@
 #include "../token_type.h"
 
 namespace pp {
+/**
+ * A postfix unary arithmetic expression like "a!".
+ */
 struct PostfixExpression : Expression
 {
     PostfixExpression(Expression* left, TokenType op)

@@ -6,6 +6,9 @@
 #include "../token.h"
 
 namespace pp {
+/**
+ * Simple parselet for a named variable like "abc".
+ */
 struct NameParselet : PrefixParselet
 {
 public:

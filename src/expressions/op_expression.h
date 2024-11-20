@@ -4,6 +4,9 @@
 #include "../token_type.h"
 
 namespace pp {
+/**
+ * A binary arithmetic expression like "a + b" or "c ^ d".
+ */
 struct OpExpression : Expression
 {
     OpExpression(Expression* left, TokenType op, Expression* right)

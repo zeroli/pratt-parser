@@ -3,6 +3,9 @@
 #include "expression.h"
 
 namespace pp {
+/**
+ * A ternary conditional expression like "a ? b : c".
+ */
 struct ConditionalExpression : Expression
 {
     ConditionalExpression(Expression* condition, Expression* thenArm, Expression* elseArm)

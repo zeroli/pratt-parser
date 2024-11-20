@@ -5,6 +5,9 @@
 #include <string>
 
 namespace pp {
+/**
+ * A simple variable name expression like "abc".
+ */
 struct NameExpression : Expression
 {
     NameExpression(const std::string& name)

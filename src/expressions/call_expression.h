@@ -4,6 +4,9 @@
 #include <vector>
 
 namespace pp {
+/**
+ * A function call like "a(b, c, d)".
+ */
 struct CallExpression : Expression
 {
     CallExpression(Expression* function, std::vector<Expression*>&& args)

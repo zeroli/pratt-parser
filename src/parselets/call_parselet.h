@@ -13,6 +13,9 @@
 namespace pp {
 class Expression;
 
+/**
+ * Parselet to parse a function call like "a(b, c, d)".
+ */
 struct CallParselet : InfixParselet
 {
 public:

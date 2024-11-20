@@ -3,6 +3,9 @@
 #include "expression.h"
 
 namespace pp {
+/**
+ * An assignment expression like "a = b".
+ */
 struct AssignExpression : Expression
 {
     AssignExpression(const std::string& name, Expression* right)

@@ -4,6 +4,9 @@
 #include "../token_type.h"
 
 namespace pp {
+/**
+ * A prefix unary arithmetic expression like "!a" or "-b".
+ */
 struct PrefixExpression : Expression
 {
     PrefixExpression(TokenType op, Expression* right)

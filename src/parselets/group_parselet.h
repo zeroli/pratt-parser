@@ -8,6 +8,9 @@
 namespace pp {
 class Expression;
 
+/**
+ * Parses parentheses used to group an expression, like "a * (b + c)".
+ */
 struct GroupParselet : PrefixParselet
 {
 public:

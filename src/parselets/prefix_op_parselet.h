@@ -6,6 +6,10 @@
 #include "../expressions/prefix_expression.h"
 
 namespace pp {
+/**
+ * Generic prefix parselet for an unary arithmetic operator. Parses prefix
+ * unary "-", "+", "~", and "!" expressions.
+ */
 struct PrefixOpParselet : PrefixParselet
 {
 public:

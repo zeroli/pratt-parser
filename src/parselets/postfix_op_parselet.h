@@ -5,6 +5,11 @@
 #include "../expressions/postfix_expression.h"
 
 namespace pp {
+/**
+ * Generic infix parselet for an unary arithmetic operator. Parses postfix
+ * unary "?" expressions.
+ */
+
 struct PostfixOpParselet : public InfixParselet
 {
 public:

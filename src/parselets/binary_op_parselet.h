@@ -8,6 +8,11 @@
 namespace pp {
 class Expression;
 
+/**
+ * Generic infix parselet for a binary arithmetic operator. The only
+ * difference when parsing, "+", "-", "*", "/", and "^" is precedence and
+ * associativity, so we can use a single parselet class for all of those.
+ */
 struct BinaryOpParselet : InfixParselet
 {
 public:
