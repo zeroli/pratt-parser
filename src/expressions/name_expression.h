@@ -13,6 +13,7 @@ struct NameExpression : Expression
     NameExpression(const std::string& name)
         : name_(name)
     { }
+    ~NameExpression() = default;
 
     void print(std::ostream& os) const override {
         os << name_;

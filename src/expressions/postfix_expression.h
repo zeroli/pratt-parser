@@ -12,6 +12,9 @@ struct PostfixExpression : Expression
     PostfixExpression(Expression* left, TokenType op)
         : left_(left), op_(op)
     { }
+    ~PostfixExpression() {
+        delete left_;
+    }
 
     void print(std::ostream& os) const override {
         os << "(";

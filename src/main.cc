@@ -20,6 +20,7 @@ bool test(const std::string& code, const std::string& expected)
 
     std::ostringstream os;
     result->print(os);
+    delete result;
 
     auto actual = os.str();
     if (expected == actual) {

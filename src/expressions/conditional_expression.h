@@ -13,6 +13,11 @@ struct ConditionalExpression : Expression
     {
     }
 
+    ~ConditionalExpression() {
+        delete condition_;
+        delete thenArm_;
+        delete elseArm_;
+    }
     void print(std::ostream& os) const override {
         os << "(";
         condition_->print(os);

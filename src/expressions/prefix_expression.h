@@ -12,6 +12,9 @@ struct PrefixExpression : Expression
     PrefixExpression(TokenType op, Expression* right)
         : op_(op), right_(right)
     { }
+    ~PrefixExpression() {
+        delete right_;
+    }
 
     void print(std::ostream& os) const override {
         os << "(" << punctuator(op_);

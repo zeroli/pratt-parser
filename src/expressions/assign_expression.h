@@ -12,6 +12,9 @@ struct AssignExpression : Expression
         : name_(name), right_(right)
     {
     }
+    ~AssignExpression() {
+        delete right_;
+    }
 
     void print(std::ostream& os) const override {
         os << "(" << name_ << " = ";

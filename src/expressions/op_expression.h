@@ -12,7 +12,10 @@ struct OpExpression : Expression
     OpExpression(Expression* left, TokenType op, Expression* right)
         : left_(left), op_(op), right_(right)
     { }
-
+    ~OpExpression() {
+        delete left_;
+        delete right_;
+    }
     void print(std::ostream& os) const override {
         os << "(";
         left_->print(os);

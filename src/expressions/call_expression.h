@@ -13,7 +13,12 @@ struct CallExpression : Expression
         : function_(function), args_(std::move(args))
     {
     }
-
+    ~CallExpression() {
+        delete function_;
+        for (auto* arg : args_) {
+            delete arg;
+        }
+    }
     void print(std::ostream& os) const {
         function_->print(os);
         os << "(";
